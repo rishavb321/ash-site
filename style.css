@@ -1,0 +1,109 @@
+.polaroid p {
+    background: #ffffff;
+    display: inline-block;
+    margin: 55px 75px 30px;
+    padding: 15px 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    -webkit-transition: all .40s linear;
+    -moz-transition: all .40s linear;
+    transition: all .40s linear;
+    z-index: 0;
+    position: relative;
+}
+
+.polaroid p:after {
+    color: #333;
+    font-size: 25px;
+    content: attr(title);
+    position: relative;
+    top: 15px;
+}
+
+.polaroid img {
+    display: block;
+    width: 450px;
+    height: auto;
+}
+
+.polaroid p:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+    z-index: 10 !important;
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+    -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+}
+
+body {
+    width: 100vw;
+    background-image: url("./imgs/background.jpg");
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.full-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+    width: 100vw;
+    margin-left: 5vw;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20vh;
+}
+
+.row { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.polaroid {
+    margin-top: -20vh;
+}
+
+.left.polaroid p {
+    transform: rotate(-35deg);
+    margin-right: -15%;
+}
+.row:nth-child(2n) .left.polaroid p {
+    transform: rotate(-20deg);
+}
+.row:nth-child(3n) .left.polaroid p {
+    transform: rotate(-30deg);
+}
+.row:nth-child(4n) .left.polaroid p {
+    transform: rotate(-15deg);
+}
+.row:nth-child(5n) .left.polaroid p {
+    transform: rotate(-25deg);
+}
+
+.right.polaroid p {
+    transform: rotate(15deg);
+    margin-left: -15%;
+}
+.row:nth-child(2n) .right.polaroid p {
+    transform: rotate(35deg);
+}
+
+.row:nth-child(3n) .right.polaroid p {
+    transform: rotate(20deg);
+}
+
+.row:nth-child(4n) .right.polaroid p {
+    transform: rotate(30deg);
+}
+
+.row:nth-child(5n) .right.polaroid p {
+    transform: rotate(25deg);
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Rishav ❤️ Ashlynn</title>
+        <link rel="stylesheet" href="style.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class="full-container"></div>
+
+        <script>
+
+            function make_polaroids(i) {
+                return `
+                <div class="row">
+                    <div class="polaroid left">
+                        <p href = "#" title = "❤️" >
+                            <img height="250"
+                            src="./imgs/${i}.jpg"
+                            alt="❤️" title="❤️" />
+                        </p>
+                    </div>
+                    <div class="polaroid right">
+                        <p href = "#" title = "❤️" >
+                            <img height="250"
+                            src="./imgs/${i+1}.jpg"
+                            alt="❤️" title="❤️" />
+                        </p>
+                    </div>
+                </div>
+                `
+            }
+
+            for(let i = 0; i < 42; i += 2) {
+                $(".full-container").append(make_polaroids(i));
+            }
+
+        </script>
+    </body>
+
+</html>
