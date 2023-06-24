@@ -50,14 +50,17 @@
                 };
             }
             function scrollToTop() {
-                window.scrollTo(0, 0);
+                // window.scrollTo({ top: 0, behavior: 'smooth' });
+                $('html, body').animate({ scrollTop: $('body').position().top }, 1000);
+
             }
 
             let alreadySet = false;
-            $(".input1").on('keyup', function (e) {
+            $("body").on('keyup', function (e) {
                 if (!alreadySet && (e.key === 'Enter' || e.keyCode === 13)) {
                     onBottomScroll(scrollToTop);
                     pageScroll();
+                    alreadySet = true;
                 }
             });
 
